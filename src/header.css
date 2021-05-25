@@ -61,3 +61,8 @@
 .basket-icon-div {
    margin-right: 10px !important
 }
+
+a {
+    color: inherit; 
+    text-decoration: inherit; 
+  }

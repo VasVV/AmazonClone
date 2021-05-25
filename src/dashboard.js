@@ -2,7 +2,8 @@ import React from "react";
 import './dashboard.css';
 import AmazonVideo from './amazon-video.jpg';
 import Product from './product.js';
-import SampleProduct from './sampleproduct.jpg'
+import SampleProduct from './sampleproduct.jpg';
+
 
 
 export default function Dashboard() {

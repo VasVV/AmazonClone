@@ -1,7 +1,8 @@
 import React from 'react';
 import './product.css';
 import StarIcon from '@material-ui/icons/Star';
-import SampleProduct from './sampleproduct.jpg'
+import SampleProduct from './sampleproduct.jpg';
+import {useDispatch} from 'react-redux';
 
 export default function Product({
     name,
@@ -10,7 +11,14 @@ export default function Product({
     image
 }) {
 
+    const dispatch = useDispatch();
+
      const ratingArr = rating ? new Array(Number(rating)).fill(<StarIcon />) : [];
+
+     const addToCart = () => {
+        dispatch({type: 'ADD_TO_CART', payload: [name,price,rating,image]})
+
+     }
 
     return (
         <div className='product'>
@@ -28,7 +36,7 @@ export default function Product({
                 <img className='product-image' src={image} />
             </div>
             <div className='add-to-cart-container'>
-                <button className='add-to-cart-btn'>Add to cart</button>
+                <button className='add-to-cart-btn' onClick={() => addToCart()}>Add to cart</button>
             </div>
         </div>
     )

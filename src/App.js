@@ -10,14 +10,32 @@ import {
   Link
 } from "react-router-dom";
 
+import Login from './login';
+import {auth} from './firebase';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    auth.onAuthStateChanged(authUser => {
+
+      if (authUser) {
+        console.log(authUser);
+      }
+    })
+  },[])
+
   return (
     
     <Router>
     <div className="App">
     <Header />
     <Switch>
+
+      <Route path='/login'>
+
+        <Login />
+      </Route>
           
           <Route path="/cart">
             <Cart />
