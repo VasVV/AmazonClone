@@ -8,6 +8,9 @@ const cart = (state = [], action) => {
                 ...state.slice(0, action.payload),
                 ...state.slice(action.payload + 1)
             ]
+
+        case 'EMPTY_CART': 
+            return [];    
         default:
             return state    
     }

@@ -3,9 +3,12 @@ import './login.css'
 import Logo from './amazon-logo.png';
 import {Link, useHistory} from 'react-router-dom';
 import {db, auth} from './firebase';
+import {useDispatch} from 'react-redux';
+
 
 export default function Login() {
-
+    
+    const dispatch = useDispatch()
     const history = useHistory();
 
     const [email, setEmail] = useState('');
@@ -16,6 +19,7 @@ export default function Login() {
         e.preventDefault();
         try {
             await auth.signInWithEmailAndPassword(email, password);
+            dispatch({type: 'ADD_CURR_USER', payload: [email, password] });
             history.push('/')
         } catch(err) {
             setErr(true)
@@ -27,6 +31,7 @@ export default function Login() {
     const register = async() => {
         try {
             await  auth.createUserWithEmailAndPassword(email, password);
+            dispatch({type: 'ADD_CURR_USER', payload: [email, password] });
             history.push('/')
         } catch(err) {
             setErr(true)

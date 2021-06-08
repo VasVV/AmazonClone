@@ -4,11 +4,13 @@ import './cart.css';
 import CurrencyFormat from 'react-currency-format';
 import {useSelector} from 'react-redux';
 import CheckoutProduct from './checkoutproduct';
+import {Link} from 'react-router-dom';
 
 
 export default function Cart() {
 
     const products = useSelector(state => state.cart);
+    const user = useSelector(state => state.addremovecurruser);
     console.log(products)
     const sum = products.reduce((acc,v) => acc + Number(v[1]),0)
   
@@ -18,7 +20,9 @@ export default function Cart() {
 
         <div className='cart'>
             <div className='cart-left'>
+                
                 <h2>Your cart</h2>
+                {user.length>0&&user[0][0]}
                 {
                     products.map((e,i) => {
                         return (
@@ -57,7 +61,7 @@ export default function Cart() {
                     thousandSeparator={true}
                     prefix={'€'}
                     />
-                <button className='btn-to-checkout'>Proceed to checkout</button>
+                <Link to={products.length > 0 && '/checkout'}><button className='btn-to-checkout'>Proceed to checkout</button></Link>
                 </div>
             </div>
         </div>

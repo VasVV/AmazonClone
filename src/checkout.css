@@ -1,0 +1,41 @@
+.checkout-container > h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+}
+
+.checkout-section {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid grey;
+}
+
+.checkout-section-title {
+    flex: 0.2
+}
+
+.checkout-address {
+    margin-left: 20px;
+    flex: 0.8
+}
+
+.checkout-items {
+    flex: 0.8 !important;
+    margin-left: 20px;
+}
+
+.checkout-form {
+    flex: 0.8
+}
+
+.payment-submit-btn {
+    background: orange;
+    margin-top: 10px;
+    color: black;
+    padding: 5px;
+    width: 20%;
+    float: right
+}

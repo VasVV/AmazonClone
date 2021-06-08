@@ -4,11 +4,18 @@ import Logo from './amazon-logo.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux';
+import {auth} from './firebase';
 
 export default function Header() {
+    const dispatch = useDispatch();
     const products = useSelector(state => state.cart);
+    const user = useSelector(state => state.addremovecurruser);
 
+    const signOut = async() => {
+        dispatch({type: 'REMOVE_CURR_USER'});
+        await auth.signOut();
+    }
 
     return (
 
@@ -19,14 +26,14 @@ export default function Header() {
                 <SearchIcon className='search-icon' />
             </div>
             <div className='header-nav'>
-            <Link to={'/login'}>
+            <Link to={ user.length == 0 ? '/login' : ''}>
                 <div className='header-option'>
                     
                     <span className='header-option-one'>
-                        Hello, guest
+                        Hello, {user.length == 0 ? 'guest' : user[0][0]}  
                     </span>
                     <span className='header-option-two'>
-                        Sign in
+                        <button className='signin-signout-btn header-option-two' onClick={user.length != 0 ? () => signOut() : '' }>{user.length == 0 ? 'Sign in' : 'Sign out'}</button>
                     </span>
                     
                 </div>

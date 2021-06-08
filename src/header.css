@@ -66,3 +66,13 @@ a {
     color: inherit; 
     text-decoration: inherit; 
   }
+
+  .signin-signout-btn {
+      background-color: #131921;
+      color: white;
+      border: none;
+  }
+
+  .signin-signout-btn:hover {
+      cursor: pointer;
+  }
