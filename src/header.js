@@ -10,7 +10,7 @@ import {auth} from './firebase';
 export default function Header() {
     const dispatch = useDispatch();
     const products = useSelector(state => state.cart);
-    const user = useSelector(state => state.addremovecurruser);
+    const user = useSelector(state => state.addremovecurruser[0]);
 
     const signOut = async() => {
         dispatch({type: 'REMOVE_CURR_USER'});
@@ -26,27 +26,30 @@ export default function Header() {
                 <SearchIcon className='search-icon' />
             </div>
             <div className='header-nav'>
-            <Link to={ user.length == 0 ? '/login' : ''}>
+            <Link to={ !user ? '/login' : ''}>
                 <div className='header-option'>
                     
                     <span className='header-option-one'>
-                        Hello, {user.length == 0 ? 'guest' : user[0][0]}  
+                        Hello, {!user ? 'guest' : user[0]}  
                     </span>
                     <span className='header-option-two'>
-                        <button className='signin-signout-btn header-option-two' onClick={user.length != 0 ? () => signOut() : '' }>{user.length == 0 ? 'Sign in' : 'Sign out'}</button>
+                        <button className='signin-signout-btn header-option-two' onClick={user ? () => signOut() : '' }>{!user? 'Sign in' : 'Sign out'}</button>
                     </span>
                     
                 </div>
                 </Link>
+                <Link to={ user ? '/orders' : ''}>
                 <div className='header-option'>
+                
                 <span className='header-option-one'>
                         Returns
                     </span>
                     <span className='header-option-two'>
                         & Orders
                     </span>
-                    
+                   
                 </div>
+                </Link>
                 <div className='header-option'>
                 <span className='header-option-one'>
                         Your

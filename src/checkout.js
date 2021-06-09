@@ -13,6 +13,9 @@ export default function Checkout() {
     const elements = useElements();
     const history = useHistory();
 
+    const [street, setStreet] = useState('');
+    const [city, setCity] = useState('');
+
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.addremovecurruser);
@@ -81,9 +84,57 @@ export default function Checkout() {
         } else {
             const currUser = auth.currentUser.uid;
             const rndInt = Math.floor(Math.random() * 10000) + 1;
-            await db.collection('orders')
-            .doc(currUser)
-            .set({[rndInt]: products.flat(2)});
+            console.log(products);
+            let exists = true;
+            let document = {
+              orderId: [],
+              products: [],
+              prices: [],
+              ratings: [],
+              images: [],
+              address: []
+
+            };
+            await db.collection('orders').doc(currUser).get().then((doc) => {
+              if (doc.exists) {
+                  doc = doc.data();
+              } else {
+                exists = false
+              }
+          }).catch((error) => {
+              console.log("Error getting document:", error);
+          });
+           
+
+            if (!exists) {
+             for (let a = 0; a<products.length; a++) {
+                document.orderId.push(clientSecret);
+                document.products.push(products[a][0]);
+                document.prices.push(products[a][1]);
+                document.ratings.push(products[a][2]);
+                document.images.push(products[a][3]);
+                document.address.push(`${street} ${city}`)
+             }
+             await db.collection('orders').doc(currUser).set(document)
+            } else {
+              let colMapped;
+              let col =  await db.collection('orders').doc(currUser).get().then(doc => colMapped = doc.data())
+              for (let a = 0; a<products.length; a++) {
+                colMapped.orderId.push(clientSecret);
+                colMapped.products.push(products[a][0]);
+                colMapped.prices.push(products[a][1]);
+                colMapped.ratings.push(products[a][2]);
+                colMapped.images.push(products[a][3]);
+                document.address.push(`${street} ${city}`)
+             }
+             await db.collection('orders').doc(currUser).set(colMapped);
+            }
+
+            
+          
+            
+
+            
 
 
 
@@ -109,8 +160,9 @@ export default function Checkout() {
                     </div>
                     <div className='checkout-address'>
                         <p>{user.length > 0 && user[0][0]}</p>
-                        <p>street</p>
-                        <p>city</p>
+                        Your street: <input type='text' className='address-input' onChange={(e) => setStreet(e.target.value)} />
+                        <br />
+                        Your city: <input type='text' className='address-input' onChange={(e) => setCity(e.target.value)}/>
                     </div>
                 </div>
 
