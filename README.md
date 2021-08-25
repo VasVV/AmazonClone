@@ -6,3 +6,5 @@ Clone of Amazon built with React
 2) Navigate to folder
 3) npm i
 4) npm start
+
+https://vasvv.github.io/AmazonClone/
