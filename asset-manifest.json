@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/AmazonClone/static/css/main.aaab68b9.chunk.css",
-    "main.js": "/AmazonClone/static/js/main.5d5e8e53.chunk.js",
-    "main.js.map": "/AmazonClone/static/js/main.5d5e8e53.chunk.js.map",
-    "runtime-main.js": "/AmazonClone/static/js/runtime-main.0fe95f6a.js",
-    "runtime-main.js.map": "/AmazonClone/static/js/runtime-main.0fe95f6a.js.map",
-    "static/js/2.dbafe7c6.chunk.js": "/AmazonClone/static/js/2.dbafe7c6.chunk.js",
-    "static/js/2.dbafe7c6.chunk.js.map": "/AmazonClone/static/js/2.dbafe7c6.chunk.js.map",
-    "static/js/3.c4d39423.chunk.js": "/AmazonClone/static/js/3.c4d39423.chunk.js",
-    "static/js/3.c4d39423.chunk.js.map": "/AmazonClone/static/js/3.c4d39423.chunk.js.map",
-    "index.html": "/AmazonClone/index.html",
-    "static/css/main.aaab68b9.chunk.css.map": "/AmazonClone/static/css/main.aaab68b9.chunk.css.map",
-    "static/js/2.dbafe7c6.chunk.js.LICENSE.txt": "/AmazonClone/static/js/2.dbafe7c6.chunk.js.LICENSE.txt",
-    "static/media/amazon-video.9ed386b8.jpg": "/AmazonClone/static/media/amazon-video.9ed386b8.jpg",
-    "static/media/logo.6ce24c58.svg": "/AmazonClone/static/media/logo.6ce24c58.svg",
-    "static/media/sampleproduct.8ba0e6fb.jpg": "/AmazonClone/static/media/sampleproduct.8ba0e6fb.jpg"
+    "main.css": "/amazon-clone/static/css/main.aaab68b9.chunk.css",
+    "main.js": "/amazon-clone/static/js/main.5d5e8e53.chunk.js",
+    "main.js.map": "/amazon-clone/static/js/main.5d5e8e53.chunk.js.map",
+    "runtime-main.js": "/amazon-clone/static/js/runtime-main.8a95c0c3.js",
+    "runtime-main.js.map": "/amazon-clone/static/js/runtime-main.8a95c0c3.js.map",
+    "static/js/2.22431168.chunk.js": "/amazon-clone/static/js/2.22431168.chunk.js",
+    "static/js/2.22431168.chunk.js.map": "/amazon-clone/static/js/2.22431168.chunk.js.map",
+    "static/js/3.c4d39423.chunk.js": "/amazon-clone/static/js/3.c4d39423.chunk.js",
+    "static/js/3.c4d39423.chunk.js.map": "/amazon-clone/static/js/3.c4d39423.chunk.js.map",
+    "index.html": "/amazon-clone/index.html",
+    "static/css/main.aaab68b9.chunk.css.map": "/amazon-clone/static/css/main.aaab68b9.chunk.css.map",
+    "static/js/2.22431168.chunk.js.LICENSE.txt": "/amazon-clone/static/js/2.22431168.chunk.js.LICENSE.txt",
+    "static/media/amazon-video.9ed386b8.jpg": "/amazon-clone/static/media/amazon-video.9ed386b8.jpg",
+    "static/media/logo.6ce24c58.svg": "/amazon-clone/static/media/logo.6ce24c58.svg",
+    "static/media/sampleproduct.8ba0e6fb.jpg": "/amazon-clone/static/media/sampleproduct.8ba0e6fb.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0fe95f6a.js",
-    "static/js/2.dbafe7c6.chunk.js",
+    "static/js/runtime-main.8a95c0c3.js",
+    "static/js/2.22431168.chunk.js",
     "static/css/main.aaab68b9.chunk.css",
     "static/js/main.5d5e8e53.chunk.js"
   ]
